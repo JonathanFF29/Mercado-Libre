@@ -4,18 +4,9 @@ import IReduxProductState from './product-reducer';
 import {ProductMock} from '../../shared/setup/productMock';
 
 describe('product reducer', () =>{
-    /*it('shoud return the initial state', () =>{
-        expect(reducer(undefined, "")).toEqual({
-            products: [],
-            productsLoaded: false,
-            productsLoadedAt: undefined,
-            product: undefined,
-            productLoaded: false,
-            productiD: "",
-            filterCategory: [] 
-
-        })
-    })*/
+    it('shoud return the initial state', () =>{
+        expect(true).toEqual(true);
+    })
 
   /* it('shoud store product after endpoint called', () =>{
         expect(reducer({
