@@ -5,7 +5,7 @@ import products from '../reducer/product-reducer';
 export enum EReduxActionTypes {
   GET_PRODUCTS = 'GET_PRODUCTS',
   GET_PRODUCT = 'GET_PRODUCT',
-  SET_ID = 'SET_ID',
+  SET_ID = 'SET_ID'
 }
 
 

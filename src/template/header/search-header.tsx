@@ -7,7 +7,8 @@ import { getProducts } from '../../redux/actions/action-products';
 import { connect, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { BarSearch } from "./component/barSearch";
-
+import logo from '../../assets/images/Logo_ML.png';
+import lupa from '../../assets/images/ic_Search.png';
 const SearchHeader: FC<SearchHeaderProps> = (products, productsLoaded) => {
     let history = useHistory();
     const dispatch: Dispatch<any> = useDispatch()
@@ -19,16 +20,17 @@ const SearchHeader: FC<SearchHeaderProps> = (products, productsLoaded) => {
         history.push('/productList');
         console.log("lista productos", products);
     }
+
     return (
         <Bar>
-            {<Image src="../../assets/images/Logo_ML.png" />}
+            {<Image src={logo}  />}
             <BarSearch>
                 <input
                     placeholder='Nunca dejes de buscar'
                     onChange={saveArticle}
                 >
                 </input>
-                {<Image  src="../../assets/images/ic_Search.png" />}
+                {<Image  src={lupa} />}
             </BarSearch>
         </Bar>
 

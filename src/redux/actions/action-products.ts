@@ -5,7 +5,7 @@ import ProductService from '../../shared/services/product-services';
 
 export interface IReduxGetProductsAction extends IReduxBaseAction {
   type: EReduxActionTypes.GET_PRODUCTS;
-  data: IProduct[];
+  data: IProduct[];  
 }
 export interface IReduxGetProductAction extends IReduxBaseAction {
   type: EReduxActionTypes.GET_PRODUCT;
@@ -27,9 +27,12 @@ export function getProducts(query:string): ThunkAction<
     const res = await ProductService.getProducts(query);
     const products = await res.json();
     const results = products.results.slice(0,4);
+    if(products.available_filters[0] !== undefined){
+      results[0].categories = products.available_filters[0].values;
+    }
     return dispatch({
       type: EReduxActionTypes.GET_PRODUCTS,
-      data: results
+      data: results,
     });
   };
 }
