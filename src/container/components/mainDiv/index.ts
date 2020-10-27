@@ -5,8 +5,11 @@ export const MainDiv = styled.div`
     background-color: ${theme.colors.whiteml};
     width:100%;
     #breadcrumb {
-       text-align:center;
-       
+       margin-top: 16px;
+       padding-left:20%;
+       text-align:left;
+       color:${theme.colors.graylightml};
+
     }
  `}
 `
