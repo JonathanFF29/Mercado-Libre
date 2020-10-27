@@ -1,28 +1,16 @@
-import http from "../http-common";
-
-class ProductService {
-  getProducDetail(idProduct: any) {
-    const headers = {
-        'Content-Type': 'application/json'
-      }
-      return http.get(`/sites/MLA/search?q=${idProduct}`,  {
-        headers: headers
-      })
+ class ProductService {
+  
+  getProducts(query: string) {
+    return fetch(
+      `https://api.mercadolibre.com/sites/MLA/search?q=%20:${query}`
+    );
    } 
 
-  getProducts(productName: any){
-    console.log("product name" + productName);
-    const headers = {
-      'Content-Type': 'application/json'
-    }
-    return http.get(`/sites/MLA/search?q=${productName}`,  {
-      headers: headers
-    })
+  getProductById(id: string){
+    return fetch(
+      `https://api.mercadolibre.com/items/${id}`
+    );
   }
-
- 
-
-
 
 }
 

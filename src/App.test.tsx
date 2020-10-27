@@ -6,7 +6,7 @@ import App from './App';
 configure({adapter: new Adapter()})
 
 describe('<SearchHeader>', () => {
-    it('should should render two Image' , () => {
+    it('should should render app component' , () => {
       const component = shallow(<App />);
       expect(component).toMatchSnapshot();
     })

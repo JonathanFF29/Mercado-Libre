@@ -2,7 +2,7 @@ import { EReduxActionTypes } from './root-reducer';
 import { IReduxProductState } from '../types/products-types';
 import { IReduxGetProductAction, IReduxGetProductsAction, IReduxSetProductAction } from '../actions/action-products';
 
-const initialState: IReduxProductState = {
+ const initialState: IReduxProductState = {
   products: [],
   productsLoaded: false,
   productsLoadedAt: undefined,
@@ -11,7 +11,7 @@ const initialState: IReduxProductState = {
   productiD: ""
 };
 
-type TProductReducerActions = IReduxGetProductsAction | IReduxGetProductAction | IReduxSetProductAction;
+ type TProductReducerActions = IReduxGetProductsAction | IReduxGetProductAction | IReduxSetProductAction ;
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (state: IReduxProductState = initialState, action: TProductReducerActions) {

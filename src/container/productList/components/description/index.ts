@@ -5,11 +5,18 @@ export const DescriptionDiv = styled.div`
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    p {
-        width: 80%;
-        display: block;
-        margin-block-start: 0em;
-         margin-block-end: 0em;
+    margin-left:16px;
+    p:nth-child(1){
+        margin-bottom:0px;
+        font-size: 24px;
+    }
+    p:nth-child(2){
+        margin-top: 32px;
+        font-size: 18px;
+    }
+    img {
+        width: 20px;
+        height: 20px;
     }
  `
 

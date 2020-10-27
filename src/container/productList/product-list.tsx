@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback} from "react";
 import { AnyAction, bindActionCreators, Dispatch } from "redux";
 import { AppState } from "../../redux/reducer/root-reducer";
 import { connect, useDispatch } from "react-redux";
@@ -11,7 +11,7 @@ const ProductList: FC<ProductProps> = (products, isLoaded) => {
     let history = useHistory();  
     
     const dispatch: Dispatch<any> = useDispatch()
-    const selectId = React.useCallback(
+    const selectId = useCallback(
             (query: any) => dispatch(SetProductId(query.target.value)),
             [dispatch]
     )
@@ -22,17 +22,22 @@ const ProductList: FC<ProductProps> = (products, isLoaded) => {
         history.push('/productDetail');  
     }
 
+   
     if (!isLoaded) {
         return <h1>Loading...</h1>;
     }
+    
     return (
-
+         
         <MainDiv>
                 {products.products.map((product: IProduct) => (
-                    <ItemDiv onClick={() => doSomething(product.id)}    key={product.id}>
+
+                    
+                    <ItemDiv onClick={() => doSomething(product.id)}    key={product.id} >
                         <ImageProduts src={product.thumbnail} />
                         <DescriptionDiv >
                             <p>$ {product.price}</p>
+                            {product.shipping.free_shipping ? <img src="../../assets/images/ic_shipping.png"></img> : ''}
                             <p>{product.title}</p>
                         </DescriptionDiv>
                         <CityDiv><p>{product.address.city_name}</p></CityDiv>

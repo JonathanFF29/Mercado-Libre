@@ -5,8 +5,9 @@ export const ItemDiv = styled.div`
     padding-left: 10%;
     padding-right: 10%;
     flex-direction: row;
-    justify-content:space-between;
-    height:10rem;
+    justify-content:space-between;      
+    padding-top: 16px;
+    padding-bottom: 16px;
     
  `
 

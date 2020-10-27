@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-router-redux": "^5.0.18",
+    "@types/react-test-renderer": "^16.9.3",
     "@types/styled-components": "^5.1.4",
     "axios": "^0.21.0",
     "enzyme": "^3.11.0",
@@ -31,10 +32,10 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts startw",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test": "jest --clearCache && jest --coverage --reporters=default --reporters=jest-junit",
+    "test": "jest --clearCache && jest --coverage --reporters=default",
     "test-watch": "jest --coverage --watch",
     "test-coverage": "react-scripts test --coverage --runInBand --watchAll=false"
   },
@@ -103,5 +104,4 @@
       "src/(.*)$": "<rootDir>/src/$1"
     }
   }
-  
 }

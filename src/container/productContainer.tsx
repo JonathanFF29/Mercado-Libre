@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import SearchHeader from '../components/header/search-header';
+import SearchHeader from '../template/header/search-header';
 import ProductList from './productList/product-list';
 import ProductDetail from './productDetail/product-detail';
 import { MainDiv } from './components/mainDiv';
 
 
-export class ProductContainer extends Component {
-    state = {  }
+export class ProductContainer extends React.Component {
+    
   
     render() { 
-        
+          
         return ( 
             <MainDiv >
                 <Route path='/' 
@@ -20,13 +20,10 @@ export class ProductContainer extends Component {
 
                 </Route>
                 <Switch>
-                    <Route  path="/productList">
-                        <ProductList />
-                    </Route>
-                    
-                    <Route   path="/productDetail">
-                        <ProductDetail />
-                    </Route>
+                    <Route  path="/productList" component={ProductList} /> 
+                  
+                    <Route   path="/productDetail" component={ProductDetail}/>
+                  
                 </Switch>
             </MainDiv>
         );

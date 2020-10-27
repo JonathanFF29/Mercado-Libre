@@ -24,7 +24,7 @@ export class ProductDetail extends React.Component<ReturnType<typeof mapStateToP
       <MainDiv>
         <FirstColumn>
           <ImageProdut  src={productDetail?.pictures[0].url} />
-          <p>Descripción del  producto</p>
+          <p >Descripción del  producto</p>
           <p>{productDetail?.id}</p>
         </FirstColumn>
         <SecondColumn>

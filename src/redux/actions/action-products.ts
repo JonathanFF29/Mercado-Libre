@@ -1,6 +1,7 @@
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { EReduxActionTypes, IReduxBaseAction } from '../reducer/root-reducer';
 import { IProduct, IReduxProductState } from '../types/products-types';
+import ProductService from '../../shared/services/product-services';
 
 export interface IReduxGetProductsAction extends IReduxBaseAction {
   type: EReduxActionTypes.GET_PRODUCTS;
@@ -23,14 +24,12 @@ export function getProducts(query:string): ThunkAction<
   IReduxGetProductsAction
 > {
   return async (dispatch: ThunkDispatch<IReduxProductState, undefined, IReduxGetProductsAction>) => {
-    const res = await fetch(
-      `https://api.mercadolibre.com/sites/MLA/search?q=%20:${query}`
-    );
+    const res = await ProductService.getProducts(query);
     const products = await res.json();
-
+    const results = products.results.slice(0,4);
     return dispatch({
       type: EReduxActionTypes.GET_PRODUCTS,
-      data: products.results
+      data: results
     });
   };
 }
@@ -39,9 +38,7 @@ export function getProduct(
   id: string
 ): ThunkAction<Promise<IReduxGetProductAction>, IReduxProductState, undefined, IReduxGetProductAction> {
   return async (dispatch: ThunkDispatch<IReduxProductState, undefined, IReduxGetProductAction>) => {
-    const res = await fetch(
-      `https://api.mercadolibre.com/items/${id}`
-    );
+    const res = await ProductService.getProductById(id);
     const product = await res.json();
     return dispatch({
       type: EReduxActionTypes.GET_PRODUCT,

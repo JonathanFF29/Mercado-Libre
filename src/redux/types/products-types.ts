@@ -9,6 +9,7 @@ export interface IProduct {
     address: IAddress;
     pictures: [IPicture];
     sold_quantity: number;
+    shipping: IShipping;
   }
   
  interface IAddress {
@@ -25,6 +26,11 @@ export interface IProduct {
    size: string,
    max_size: string,
    quality: string
+}
+
+interface IShipping {
+   free_shipping: boolean,
+   mode: string,
 }
  
   

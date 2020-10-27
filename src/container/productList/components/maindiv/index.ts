@@ -1,11 +1,14 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const MainDiv = styled.div`
+${({ theme }) => css`
     display:flex;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 5%;
-    flex-direction: column;
-    
- `
-
+    margin-top: 5%;
+    width: 76%;
+    flex-direction: column;  
+    background-color:  ${theme.colors.whiteml};
+    margin-left:12%;
+    margin-right:12%;
+ 
+`} 
+`
