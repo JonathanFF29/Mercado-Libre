@@ -10,6 +10,7 @@ export interface IProduct {
     pictures: [IPicture];
     sold_quantity: number;
     shipping: IShipping;
+    categories: ICategoryDetail;
   }
   
  interface IAddress {
@@ -20,18 +21,27 @@ export interface IProduct {
  }
 
  interface IPicture {
-   id: string,
-   url: string,
-   secure_url: string,
-   size: string,
-   max_size: string,
+   id: string;
+   url: string;
+   secure_url: string;
+   size: string;
+   max_size: string;
    quality: string
 }
 
 interface IShipping {
-   free_shipping: boolean,
-   mode: string,
+   free_shipping: boolean;
+   mode: string;
 }
+
+export interface ICategoryDetail {
+   id: string;
+   name: string;
+   results:string;
+}
+
+
+ 
  
   
  export interface IReduxProductState {
@@ -41,4 +51,5 @@ interface IShipping {
     product?: IProduct;
     productLoaded: boolean;
     productiD: string;
+    filterCategory: ICategoryDetail[];
   }

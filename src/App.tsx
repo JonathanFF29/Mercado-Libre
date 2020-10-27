@@ -17,9 +17,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <BrowserRouter>
-          <Route path='/'
-            render={props => <ProductContainer {...props} />} 
-          />
+          <Route  path="/" component={ProductContainer} /> 
         </BrowserRouter>
       </ThemeProvider>
     </Provider>

@@ -6,6 +6,7 @@ import {  useHistory } from "react-router-dom";
 import { MainDiv, ItemDiv, ImageProduts, CityDiv, DescriptionDiv } from "./components"
 import {  SetProductId } from '../../redux/actions/action-products';
 import { IProduct } from "../../redux/types/products-types";
+import carIcon from '../../assets/images/ic_shipping.png'
 
 const ProductList: FC<ProductProps> = (products, isLoaded) => {
     let history = useHistory();  
@@ -37,7 +38,7 @@ const ProductList: FC<ProductProps> = (products, isLoaded) => {
                         <ImageProduts src={product.thumbnail} />
                         <DescriptionDiv >
                             <p>$ {product.price}</p>
-                            {product.shipping.free_shipping ? <img src="../../assets/images/ic_shipping.png"></img> : ''}
+                            {product.shipping.free_shipping ? <img src={carIcon}></img> : ''}
                             <p>{product.title}</p>
                         </DescriptionDiv>
                         <CityDiv><p>{product.address.city_name}</p></CityDiv>

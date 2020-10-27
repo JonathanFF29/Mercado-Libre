@@ -7,6 +7,6 @@ export const MainDiv = styled.div`
     padding-right: 10%;
     padding-top: 2%;
     flex-direction: row;
-    background-color: ${theme.colors.whiteml};
+    background-color: #EEEEEE;
     `}
 `

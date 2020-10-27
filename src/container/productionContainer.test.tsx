@@ -8,7 +8,8 @@ import renderer from 'react-test-renderer';
 configure({ adapter: new Adapter() });
 
 describe('ProductContainer', () => {
-  test('snapshot renders', () => {
- 
+  it('ProductContainer should renders', () => {
+      const wrapper = shallow(<ProductContainer/>)
+      expect(wrapper).toMatchSnapshot();
   });
 });

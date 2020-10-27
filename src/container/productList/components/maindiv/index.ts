@@ -6,7 +6,7 @@ ${({ theme }) => css`
     margin-top: 5%;
     width: 76%;
     flex-direction: column;  
-    background-color:  ${theme.colors.whiteml};
+    background-color:  #EEEEEE;
     margin-left:12%;
     margin-right:12%;
  
